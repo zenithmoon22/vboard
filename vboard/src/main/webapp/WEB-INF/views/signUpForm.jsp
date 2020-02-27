@@ -16,7 +16,7 @@
 <!-- 커스텀 CSS -->
 <link href="resources/css/signStyle.css" rel="stylesheet" type="text/css" media="screen">
 <!-- 회원가입 유효성 검사 JS -->
-<script type="text/javascript" src="resources/js/signValidation.js"></script>
+<script type="text/javascript" src="resources/js/signUp.js"></script>
 </head>
 
 <body>

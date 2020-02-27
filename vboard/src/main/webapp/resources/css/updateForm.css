@@ -12,14 +12,18 @@ body {
 	min-height: 100%;
 	position: relative;
 	padding-bottom: 30px;
-	text-align: center;
+
 }
 .wrap {
 	min-height: 85.2%;
 	position: relative;
 	padding-bottom: 30px;
+}
+
+#fileup{
 	text-align: center;
 }
+
 footer {
 	width: 1200px;
 	height : 80px;

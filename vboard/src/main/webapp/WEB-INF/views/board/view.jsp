@@ -73,13 +73,14 @@
 								<form name="readForm" role="form" method="post">
 									<input type="hidden" id="file_no" name="file_no" value="">
 								</form>
+								<div id="fileup">
 								<span>첨부파일 목록</span>
 									<div class="form-group">
 										<c:forEach var="file" items="${file}">
 											<a href="#" onclick="fn_fileDown('${file.file_no}'); return false;">${file.org_file_name}</a>(${file.file_size}kb)<br>
 										</c:forEach>
 									</div>
-									
+								</div>	
 								<!-- 글 수정 버튼 -->
 								<button type="button" class="btn btn-success pull-right" onclick="location.href='updateForm?b_num=${v_content.b_num}&page=${page}&perPageNum=${perPageNum}'">글 수정</button>
 							</div>

@@ -14,8 +14,9 @@ body {
 }
 
 #reply_table tr td {
-	padding: 0;
-	vertical-align: middle;
+	padding:10px;
+	text-align:left;
+	
 }
 
 #reply_table tr td:nth-child(1) {
@@ -64,7 +65,7 @@ body {
 	min-height: 85.2%;
 	position: relative;
 	padding-bottom: 30px;
-	text-align: center;
+
 }
 
 footer {
@@ -89,6 +90,9 @@ footer {
 	}
 }
 
+#fileup{
+	text-align: center;
+}
 .wrapper{
 	margin-top:30px;
 	position: relative;

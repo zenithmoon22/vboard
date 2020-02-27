@@ -64,25 +64,24 @@ public class UserController {
 
 	// 이메일 인증 요청
 	// paramEmail에 담기는 파라미터 email
-	// ################# 이메일 발송 딜레이 고려하여 회원가입 버튼 누를 수 있게 하기 #################
 	@RequestMapping("signUpForm/emailCertify")
 	public @ResponseBody String responseEmailCertify(@RequestParam String paramEmail) throws Exception {
 		System.out.println("인증메일 전송 주소: " + paramEmail);
 
 		// 인증 키 생성
-		String random_24_string = new MailAuthKeyGenerator().excuteGenerate();
-		System.out.println("active_key 값: " + random_24_string);
+		String random_12_string = new MailAuthKeyGenerator().excuteGenerate();
+		System.out.println("active_key 값: " + random_12_string);
 
 		// 인증 키 유저에게 메일 보내기(get)
 		MailHandler sendMail = new MailHandler(mailSender);
-		sendMail.setSubject("[ CarHistory 회원가입 이메일 인증 메일입니다 ]");
-		sendMail.setText(new StringBuffer().append("<h1>이메일 링크를 클릭 하시면 인증이됩니다</h1>").append("<h1><a href='http://localhost:8080/vboard/emailActivate?u_email=")
-				.append(paramEmail).append("&u_email_active_key=").append(random_24_string).append("' target='_blank'>이메일 인증 링크입니다</a></h1>").toString());
-		sendMail.setFrom("ynotder@gmail.com", "CarHistory 운영자");
+		sendMail.setSubject("[ Car Story 회원가입 이메일 인증 메일입니다 ]");
+		sendMail.setText(new StringBuffer().append("<h1>이메일 링크를 클릭 하시면 인증이됩니다</h1>").append("<h2><a href='http://localhost:8080/vboard/emailActivate?u_email=")
+				.append(paramEmail).append("&u_email_active_key=").append(random_12_string).append("' target='_blank'>Mania Community. Your Favorite. Car Stroy</a></h2>").toString());
+		sendMail.setFrom("ynotder@gmail.com", "Car Story");
 		sendMail.setTo(paramEmail);
 		sendMail.send();
 
-		return random_24_string;
+		return random_12_string;
 	}
 
 	// 회원가입 요청
@@ -95,7 +94,7 @@ public class UserController {
 
 		JOptionPane.showMessageDialog(null, "<html>회원 가입을 축하합니다 <br> 이메일 인증 후 로그인 가능합니다.</html>");
 		// "프로젝트명/signUpform/" 경로에 있기 때문에 "/"으로 상위 경로로 나간 후, index로 리다이렉트
-		return "redirect:/index";
+		return "redirect:/main";
 
 	}
 
@@ -154,7 +153,7 @@ public class UserController {
 		session.invalidate();
 		// 특정 세션 삭제
 		// ex) session.removeAttribute("login_session");
-		return "redirect:index";
+		return "redirect:main";
 	}
 	
 

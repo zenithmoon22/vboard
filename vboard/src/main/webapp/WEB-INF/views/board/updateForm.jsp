@@ -14,8 +14,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- 커스텀 CSS -->
 <link href="../resources/css/updateForm.css" rel="stylesheet" type="text/css" media="screen">
-<!-- 네이버 스마트 에디터 2 -->
-<script type="text/javascript" src="../resources/js/naver_smart_editor2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
+<!-- include summernote css/js-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+<!-- include summernote-ko-KR -->
+<script src="../resources/js/summernote-ko-KR.js"></script>
+
 <!-- updateBoard.js -->
 <script type="text/javascript" src="../resources/js/updateBoard.js"></script>
 </head>
@@ -57,11 +62,11 @@
 											<span class="input-group-addon">제목</span>
 											<input id="b_title" type="text" class="form-control" name="b_title" placeholder="글 제목" value="${u_content.b_title}">
 										</div>
-										<!-- 네이버 스마트 에디터 -->
-										<textarea name="b_content" id="b_content" rows="20" cols="125">${u_content.b_content}</textarea>
+										<!-- 썸머노트 -->
+										<textarea id="summernote" name="b_content">${u_content.b_content}</textarea>
 										
 										<h4>첨부 파일</h4>
-												
+											<div id = "fileup">
 												<c:forEach var="file" items="${file}" varStatus="var">
 												<div>
 													<input type="hidden" id="file_no" name="file_no_${var.index}" value="${file.file_no}">
@@ -78,7 +83,7 @@
 													</td>
 												</tr>
 											</table>
-
+											</div>
 											<hr>
 										<button id="deleteSubmit" type="button" class="btn btn-danger pull-left">글 삭제하기</button>
 										<button id="updateSubmit" type="button" class="btn btn-success pull-right">글 수정하기</button>

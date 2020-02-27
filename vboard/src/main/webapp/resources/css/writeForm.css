@@ -12,7 +12,6 @@ body {
 	min-height: 85.2%;
 	position: relative;
 	padding-bottom: 30px;
-	text-align: center;
 }
 
 .fileForm{
@@ -22,7 +21,9 @@ body {
 
 .fileAdd{
 	padding : 10px;
+	margin-left:400px;
 }
+
 
 footer {
 	width: 1200px;

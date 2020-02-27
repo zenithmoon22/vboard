@@ -6,7 +6,7 @@ import java.util.Random;
 // 인증키 생성
 public class MailAuthKeyGenerator {
 
-	private int certCharLength = 24;
+	private int certCharLength = 12;
 	private final char[] characterTable = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
 			'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
 
