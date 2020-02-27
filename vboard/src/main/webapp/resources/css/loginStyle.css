@@ -1,0 +1,89 @@
+body {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.row {
+	margin: 0;
+}
+
+
+#loginWrap {
+	padding-top: 20px;
+	margin: 0 auto;
+	width: 680px;
+	height: 220px;
+	margin-top: 120px;
+	margin-bottom: 220px;
+}
+
+#loginWrap .input-group {
+	margin-bottom: 10px;
+}
+
+#loginWrap .btn {
+	margin-bottom: 10px;
+}
+
+#naverLogin {
+	color: #FFFFFF;
+	background-color: #2DB400;
+}
+
+#loginOption a {
+	color: #000000;
+}
+
+#sideAds {
+	padding-left: 50px;
+}
+
+.well {
+	margin-left:40px;
+	height: 200px;
+}
+
+.bar {
+	margin: 0 4px;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+	border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+	height: 450px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	margin-left:20px;
+	padding-top: 20px;
+	background-color: #ffff80;
+	height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+	width: 1300px;
+	margin: 0 auto;
+	background-color: #004080;
+	color: white;
+	padding: 15px;
+    bottom: 0;
+    position:fixed;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+		margin:20px;
+	}
+	.row.content {
+		height: auto;
+	}
+}

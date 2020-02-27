@@ -1,0 +1,105 @@
+html{
+	height: 100%;
+}
+
+body {
+	width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+
+#integratedSearch {
+	width: 400px;
+}
+
+#reply_table tr td {
+	padding: 0;
+	vertical-align: middle;
+}
+
+#reply_table tr td:nth-child(1) {
+	width: 0px;
+	display: none;
+}
+
+#reply_table tr td:nth-child(2) {
+	width: 140px;
+}
+
+#reply_table tr td:nth-child(4) {
+	width: 120px;
+}
+
+#reply_table tr td:nth-child(5) {
+	width: 140px;
+}
+
+#replyCaution, #replyInfo {
+	padding: 0;
+}
+
+.bar {
+	margin: 0 4px;
+}
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+	border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+	height: 450px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	background-color: #FFFFFF;
+	height: 100%;
+}
+
+.wrap {
+	min-height: 85.2%;
+	position: relative;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+footer {
+	width: 1200px;
+	height : 80px;
+	margin: 0 auto;
+	background-color: #004080;
+	color: white;
+	padding: 15px;
+    bottom: 0;
+    position: absolute;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+
+.wrapper{
+	margin-top:30px;
+	position: relative;
+	bottom:0;
+}
+
+#searchNav {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#search_content {
+	width: 500px;
+}

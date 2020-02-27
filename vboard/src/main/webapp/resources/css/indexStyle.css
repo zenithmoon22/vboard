@@ -1,0 +1,83 @@
+html{
+	height: 100%;
+}
+
+body {
+	width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.row {
+	min-height: 81.8%;
+	margin: 0 auto;
+}
+
+
+#bbs th {
+	text-align: center;
+}
+
+#bbsNo {
+	width: 100px;
+}
+
+#bbsNick {
+	width: 100px;
+}
+
+#bbsDate {
+	width: 150px;
+}
+
+#bbsHit {
+	width: 50px;
+}
+
+#bbsReq {
+	width: 100px;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+	border-radius: 0;
+}
+
+.wrap {
+	min-height: 54.4%;
+	position: relative;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+footer {
+	width: 1200px;
+	height : 80px;
+	margin: 0 auto;
+	background-color: #004080;
+	color: white;
+	padding: 15px;
+    bottom: 0;
+    position:absolute;
+}
+
+
+.wrapper{
+	height:100px;
+	position: relative;
+	bottom:0;
+}
+.well{
+	height:225px;
+}
+.side{
+	height:100px;
+}
+#searchNav {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#search_content {
+	width: 500px;
+}

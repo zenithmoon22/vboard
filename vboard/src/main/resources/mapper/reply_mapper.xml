@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vboard.mapper.reply_mapper">
+
+	<select id="replyListPageCriteria" resultType="ReplyVO">
+		select *
+		from reply_info
+		where b_num = #{b_num}
+		limit #{replyPageStart},
+		#{replyPerPageNum}
+	</select>
+
+	<select id="replyTotalCount" resultType="java.lang.Integer">
+		select count(*)
+		from reply_info
+		where b_num = #{b_num}
+	</select>
+
+	<insert id="replyWrite">
+		insert into reply_info
+		(b_num, reply_id, reply_content)
+		values (#{b_num}, #{reply_id}, #{reply_content})
+	</insert>
+
+	<update id="replyUpdate">
+		update reply_info
+		set reply_content = #{reply_content}
+		where reply_index = #{reply_index}
+	</update>
+	
+	<delete id="replyDelete">
+		delete from reply_info
+		where reply_index = #{reply_index}
+	</delete>
+
+</mapper>

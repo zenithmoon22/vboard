@@ -1,0 +1,36 @@
+html{
+	height: 100%;
+}
+
+body {
+	width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.writeform{
+	min-height: 85.2%;
+	position: relative;
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+.fileForm{
+	padding : 10px;
+	margin : 10px;
+}
+
+.fileAdd{
+	padding : 10px;
+}
+
+footer {
+	width: 1200px;
+	height : 80px;
+	margin: 0 auto;
+	background-color: #004080;
+	color: white;
+	padding: 15px;
+    bottom: 0;
+
+}

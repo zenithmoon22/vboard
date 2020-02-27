@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+footer {
+	width: 1200px;
+	margin: 0 auto;
+	background-color: #004080;
+	color: white;
+	padding: 15px;
+    bottom: 0;
+}

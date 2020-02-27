@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vboard.dao.BoardDao">
+
+	<select id="listPageCriteria" resultType="BoardVO">
+		select *
+		from board_info
+		where b_num > 0
+		order by b_num desc
+		limit #{pageStart}, #{perPageNum}
+	</select>
+	
+	<select id="totalCount" resultType="java.lang.Integer">
+		select count(*)
+		from
+		board_info
+	</select>
+	
+	<select id="boardRead" resultType="BoardVO">
+		select *
+		from board_info
+		where b_num = #{b_num}
+	</select>
+	
+	<!-- 글 쓰기 -->
+	<insert id="boardWrite" parameterType="com.vboard.vo.BoardVO" useGeneratedKeys="true" keyProperty="b_num">
+		insert into board_info
+		(b_num, b_title, b_content, b_writer,b_reg_date,b_hit,b_recommend)
+		values(#{b_num},#{b_title}, #{b_content}, #{b_writer},sysdate(),0,0)
+	</insert>
+	
+	<!-- 	파일 업로드 -->
+	<insert id="insertFile" parameterType="hashMap">
+		insert into MP_FILE(
+			file_no, b_num, org_file_name, stored_file_name, file_size,  regdate
+		)values(
+			#{file_no}, #{b_num},  #{org_file_name}, #{stored_file_name},  #{file_size}, sysdate()
+		)
+    </insert>
+	
+	<!-- 파일 조회 -->
+	<select id="selectFileList" parameterType="int" resultType="hashMap">
+		select file_no, org_file_name, round(file_size/1024,1) as file_size
+		from mp_file
+		where b_num = #{b_num} 
+			and del_gb = 'N' order by file_no asc
+	</select>
+	
+	<!-- 첨부파일 다운 -->
+	<select id="downFile" parameterType="hashMap" resultType="hashMap">
+		select stored_file_name, org_file_name
+		from mp_file
+		where file_no=#{file_no}
+	</select>
+	
+	<update id="updateFile" parameterType="hashMap">
+		update mp_file 
+		set del_gb = 'Y'
+		where file_no = #{file_no}
+    </update>
+	
+	
+	<!-- 글 수정 -->
+	<update id="boardUpdate">
+		update board_info
+			set b_title = #{b_title},b_content = #{b_content}
+		where b_num = #{b_num}
+		and b_writer = #{b_writer}
+	</update>
+	
+	<!-- 글 삭제 -->
+	<delete id="boardDelete">
+		delete from board_info
+		where b_num = #{b_num}
+		and b_writer = #{b_writer}
+	</delete>
+	
+	<update id="countHit">
+		update board_info
+		set b_hit = b_hit+1
+		where b_num = #{b_num}
+	</update>
+	
+	<update id="countReply">
+		update board_info
+		set b_reply_count = (select count(b_num) from reply_info where b_num = #{b_num})
+		where b_num = #{b_num}
+	</update>
+
+	<select id="searchBoard" resultType="BoardVO">
+		select *
+		from board_info
+		<if test='search_condition == "titleAndContent"'>
+			where b_title like concat("%",#{search_content},"%") or b_content like concat("%",#{search_content},"%")
+		</if>
+		<if test='search_condition == "title"'>
+			where b_title like concat("%",#{search_content},"%")
+		</if>
+		<if test='search_condition == "content"'>
+			where b_content like concat("%",#{search_content},"%")
+		</if>
+		<if test='search_condition == "writer"'>
+			where b_writer like concat("%",#{search_content},"%")
+		</if>
+		order by b_num desc
+		limit #{pageStart}, #{perPageNum}
+	</select>
+
+	<select id="searchTotalCount" resultType="java.lang.Integer">
+		select count(*)
+		from
+		board_info
+		<if test='search_condition == "titleAndContent"'>
+			where b_title like concat("%",#{search_content},"%") or b_content like concat("%",#{search_content},"%")
+		</if>
+		<if test='search_condition == "title"'>
+			where b_title like concat("%",#{search_content},"%")
+		</if>
+		<if test='search_condition == "content"'>
+			where b_content like concat("%",#{search_content},"%")
+		</if>
+		<if test='search_condition == "writer"'>
+			where b_writer like concat("%",#{search_content},"%")
+		</if>
+	</select>
+
+	<update id="countRecommend">
+		update board_info set b_recommend = b_recommend+1
+		where b_num = #{b_num}
+		and now() > (select u_recommend_active_time from
+		user_info where u_id = #{u_id});
+	</update>
+
+</mapper>
