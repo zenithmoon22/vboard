@@ -1,17 +1,5 @@
 package com.vboard.common.paging;
 
-/* 
-
-	standard vs criterion(복수형, criteria)
-	standard 대부분의 사람들이 생각하는 '기준'
-	criterion 내가 사용하는 '기준'
-	
-	
-	Criteria 클래스
-	: 페이징 처리를 위해서 사용될 객체로 페이지 번호와 페이지당
-		출력할 게시 글 수를 관리할 객체
-
-*/
 public class PageCriteria {
 	private int page; // 현재 페이지를 나타낼 변수
 	private int perPageNum; // 페이지당 표시할 게시글의 수

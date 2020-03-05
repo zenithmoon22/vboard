@@ -8,8 +8,6 @@ import javax.swing.JOptionPane;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-// http://rongscodinghistory.tistory.com/2?category=693395 참조
-// 인터셉터란?
 // 특정 URI로 요청시 컨트롤러로 가는 요청을 가로채는 역할을 한다
 // 로그인 처리를 담당하는 인터셉터 클래스
 // servlet-context.xml에 인터셉터 설정 정보 등록이 필요하다
