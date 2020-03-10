@@ -2,7 +2,6 @@ package com.vboard.common.mail;
 
 import java.util.Random;
 
-// http://ktko.tistory.com/ 참조
 // 인증키 생성
 public class MailAuthKeyGenerator {
 

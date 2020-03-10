@@ -3,11 +3,6 @@ package com.vboard.common.paging;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
-/*
-	PageMaker 클래스
-	: 페이지 처리에 필요한 기능들을 모듈화 시키기 위해 만든 클래스
-	
-*/
 
 public class PageMaker {
 
