@@ -65,7 +65,8 @@ function checkInput(form) {
 function fn_addFile(){
 	var fileIndex = 1;
 	$(".fileAdd_btn").on("click", function(){
-		$("#fileIndex").append("<div><input type='file' style='float:left;' name='file_"+(fileIndex++)+"'>"+"</button>"+"<button type='button' style='float:right;' id='fileDelBtn'>"+"삭제"+"</button></div>");
+		$("#fileIndex").append("<div><input type='file' style='float:left;' name='file_"+(fileIndex++)+"'>"+"</button>"+
+				"<button type='button' style='float:right;' id='fileDelBtn'>"+"삭제"+"</button></div>");
 	});
 	$(document).on("click","#fileDelBtn", function(){
 		$(this).parent().remove();		
@@ -76,7 +77,8 @@ function fn_updateAddFile(){
 	var updateFileIndex = 1;
 	$(".updateFileAdd_btn").on("click", function(){
 		alert("aa");
-		$("#updateFileIndex").append("<div><input type='file' style='float:left;' name='file_"+(updateFileIndex++)+"'>"+"</button>"+"<button type='button' style='float:right;' id='fileDelBtn'>"+"삭제"+"</button></div>");
+		$("#updateFileIndex").append("<div><input type='file' style='float:left;' name='file_"+(updateFileIndex++)+"'>"+
+				"</button>"+"<button type='button' style='float:right;' id='fileDelBtn'>"+"삭제"+"</button></div>");
 	});
 	$(document).on("click","#fileDelBtn", function(){
 		$(this).parent().remove();

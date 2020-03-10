@@ -85,6 +85,7 @@
 											</table>
 											</div>
 											<hr>
+											
 										<button id="deleteSubmit" type="button" class="btn btn-danger pull-left">글 삭제하기</button>
 										<button id="updateSubmit" type="button" class="btn btn-success pull-right">글 수정하기</button>
 									</form>

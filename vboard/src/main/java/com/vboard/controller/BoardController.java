@@ -204,7 +204,7 @@ public class BoardController {
 	// 검색
 	@RequestMapping("/search")
 	public String responseSearch(@ModelAttribute("pc") PageCriteria pc, @RequestParam HashMap<String, Object> params, Model model) throws Exception {
-		// 검색결과 10개씩 뿌리기
+		// 10개씩 결과
 		pc.setPerPageNum(10);
 
 		// 파라미터 합치기
@@ -230,7 +230,7 @@ public class BoardController {
 		model.addAttribute("search_condition", params.get("search_condition"));
 		model.addAttribute("search_content", params.get("search_content"));
 
-		// 검색했던 결과값 유지해야 페이징 기능 이용이 가능하다
+		// 검색했던 결과값 유지해야 페이징 기능 이용이 가능
 		return "search";
 	}
 
@@ -245,6 +245,7 @@ public class BoardController {
 		return "redirect:view?b_num=" + params.get("b_num") + "&page=" + params.get("page") + "&perPageNum=" + params.get("perPageNum");
 	}
 	
+	// 파일 다운
 	@RequestMapping(value="board/fileDown")
 	public void fileDown(@RequestParam Map<String, Object> map, HttpServletResponse response) throws Exception{
 		System.out.println("fileDown");

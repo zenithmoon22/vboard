@@ -20,7 +20,7 @@
 <!-- include summernote-ko-KR -->
 <script src="../resources/js/summernote-ko-KR.js"></script>
 <!-- boardCRUD.js -->
-<script type="text/javascript" src="../resources/js/boardWrite.js"></script>
+<script type="text/javascript" src="../resources/js/writeForm.js"></script>
 
 </head>
 

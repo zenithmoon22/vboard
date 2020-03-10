@@ -123,6 +123,7 @@
 										</c:forEach>
 									</table>
 								</div>
+								
 								<!-- 댓글 페이징 처리 -->
 								<div class="row text-center">
 									<ul class="pagination">
@@ -146,6 +147,7 @@
 										</c:if>
 									</ul>
 								</div>
+								
 								<!-- 세션 로그인 유저가 있는 경우, 댓글 작성 폼 show -->
 								<c:if test="${login_session.u_id != null}">
 									<div class="row">

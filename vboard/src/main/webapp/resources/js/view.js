@@ -58,6 +58,7 @@ function replyUpdateFunc(rIndex) {
 	}
 }
 
+// 파일 다운로드
 function fn_fileDown(fileNo){
 	var formObj = $("form[name='readForm']");
 	$("#file_no").attr("value", fileNo);

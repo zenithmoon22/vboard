@@ -44,14 +44,13 @@ public class UserController {
 		return "loginForm";
 	}
 
-	// 아이디 중복 확인 요청
-	// paramId에 담기는 파라미터 id
+	// 아이디 중복 확인
 	@RequestMapping(value = "signUpForm/idDupCheck", produces = "application/text; charset=utf8")
 	public @ResponseBody String responseIdDupCheck(@RequestParam String paramId) throws Exception {
 		int result = -1;
 		String checkedId = "";
-		// 검색 후, 0이면 사용가능, 1이면 중복, -1이면 메서드 작동X, -2이면 SQL 작동X
 		result = userService.idDupCheck(paramId);
+		
 		if (result == 0) {
 			checkedId = paramId;
 		} else if (result == 1) {
@@ -63,7 +62,6 @@ public class UserController {
 	}
 
 	// 이메일 인증 요청
-	// paramEmail에 담기는 파라미터 email
 	@RequestMapping("signUpForm/emailCertify")
 	public @ResponseBody String responseEmailCertify(@RequestParam String paramEmail) throws Exception {
 		System.out.println("인증메일 전송 주소: " + paramEmail);
